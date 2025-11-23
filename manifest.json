@@ -1,9 +1,8 @@
 {
   "name": "Genta Robot – Control micro:bit",
-  "short_name": "Genta Robot",
-  "lang": "es",
-  "start_url": ".",
-  "display": "fullscreen",
+  "short_name": "GentaRobot",
+  "start_url": "./",
+  "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#c55a11",
   "icons": [
