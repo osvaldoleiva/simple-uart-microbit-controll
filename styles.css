@@ -1,0 +1,240 @@
+:root {
+  --genta-blanco: #ffffff;
+  --genta-naranjo: #c55a11;
+  --genta-gris: #4b4a4a;
+  --genta-azul: #5b9bd5;
+  --genta-azul-background: #4174a2;
+  --genta-dorado: #bf9000;
+
+  --genta-fondo: #f5f5f5;
+  --genta-texto: var(--genta-gris);
+  --genta-borde: #dedede;
+  --genta-error: #e63946;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--genta-fondo);
+  color: var(--genta-texto);
+}
+
+/* Layout general */
+
+.app-header {
+  background: linear-gradient(120deg, var(--genta-azul-background), var(--genta-dorado));
+  color: var(--genta-blanco);
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 48px;
+  height: auto;
+}
+
+.brand-text h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.brand-text p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.app-main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 72px;
+}
+
+.card {
+  background: var(--genta-blanco);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.04);
+  border: 1px solid var(--genta-borde);
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.card-description {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  text-align: center;
+  background: rgba(245, 245, 245, 0.98);
+  border-top: 1px solid var(--genta-borde);
+}
+
+/* Botones */
+
+button {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+.btn {
+  padding: 10px 16px;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.12);
+}
+
+.btn-primary {
+  background: var(--genta-naranjo);
+  color: var(--genta-blanco);
+}
+
+.btn-primary:active {
+  background: #a3470d;
+}
+
+.btn-secondary {
+  background: var(--genta-blanco);
+  color: var(--genta-naranjo);
+  border: 1px solid var(--genta-borde);
+}
+
+.btn-secondary:active {
+  background: #e5e7eb;
+}
+
+.btn-accent {
+  background: var(--genta-dorado);
+  color: #4b3200;
+}
+
+.btn-accent:active {
+  background: #9f7200;
+}
+
+.btn-control {
+  background: var(--genta-blanco);
+  color: var(--genta-azul-backgroundl);
+  border: 1px solid var(--genta-borde);
+  min-height: 52px;
+}
+
+.btn-stop {
+  background: var(--genta-error);
+  color: var(--genta-blanco);
+}
+
+.connection-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Estado y robot */
+
+.status {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.robot-indicator {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dashed var(--genta-borde);
+  font-size: 0.9rem;
+  text-align: center;
+  background: #fafafa;
+}
+
+.robotShow_connected {
+  border-style: solid;
+  border-color: #22c55e;
+  background: #ecfdf5;
+  color: #166534;
+  font-weight: 600;
+}
+
+/* Pad de control */
+
+.control-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.horn-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Input + log */
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--genta-borde);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--genta-azul);
+  box-shadow: 0 0 0 2px rgba(91, 155, 213, 0.35);
+}
+
+.custom-command-row {
+  display: flex;
+  gap: 8px;
+}
+
+.log {
+  margin-top: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  max-height: 160px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid var(--genta-borde);
+  padding: 8px;
+  background: #111827;
+  color: #e5e7eb;
+  white-space: pre-wrap;
+}
+

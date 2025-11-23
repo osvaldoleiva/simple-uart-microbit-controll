@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Genta Robot – Control micro:bit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1f3c88" />
+
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Icono básico (puedes cambiarlo) -->
+  <link rel="icon" type="image/png" href="img/icon-192.png" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="brand">
+      <img src="img/genta-logo.svg" alt="Genta Soluciones Eduactivas" class="brand-logo">
+      <div class="brand-text">
+        <h1>Genta Robot</h1>
+        <p>Control de robots educativos con micro:bit</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="card">
+      <h2>Conexión</h2>
+      <p class="card-description">
+        Conecta tu micro:bit v2 por Bluetooth para controlar tu robot Genta.
+      </p>
+      <div class="connection-actions">
+        <button id="connectBtn" class="btn btn-primary" onclick="connectButtonPressed()">
+          Conectar micro:bit
+        </button>
+        <button id="disconnectBtn" class="btn btn-secondary" onclick="disconnectButtonPressed()">
+          Desconectar
+        </button>
+      </div>
+      <div id="status" class="status">Estado: desconectado</div>
+      <div id="robotShow" class="robot-indicator">
+        Robot desconectado
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Controles del robot</h2>
+      <p class="card-description">
+        Mantén presionado un botón para mover el robot. Al soltar, se detiene automáticamente.
+      </p>
+
+      <div class="control-pad">
+        <div></div>
+        <button id="btnUp" class="btn btn-control">Arriba</button>
+        <div></div>
+
+        <button id="btnLeft" class="btn btn-control">Izquierda</button>
+        <button id="btnStop" class="btn btn-stop">Detener</button>
+        <button id="btnRight" class="btn btn-control">Derecha</button>
+
+        <div></div>
+        <button id="btnDown" class="btn btn-control">Abajo</button>
+        <div></div>
+      </div>
+
+      <div class="horn-row">
+        <button id="btnHorn" class="btn btn-accent">
+          Bocina
+        </button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Comando personalizado</h2>
+      <p class="card-description">
+        Envía un comando de texto para pruebas avanzadas (por ejemplo: <code>VELOCIDAD 50</code>).
+      </p>
+      <div class="custom-command-row">
+        <input
+          id="customCommand"
+          class="input"
+          type="text"
+          placeholder="Escribe tu comando aquí"
+        />
+        <button id="btnSendCustom" class="btn btn-secondary">
+          Enviar
+        </button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Registro</h2>
+      <p class="card-description">
+        Aquí se muestran los mensajes enviados y recibidos desde la micro:bit.
+      </p>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Genta Soluciones Eduactivas · Robótica y programación para colegios</p>
+  </footer>
+
+  <!-- JS principal -->
+  <script src="app.js"></script>
+</body>
+</html>
