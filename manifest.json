@@ -2,10 +2,10 @@
   "name": "Genta Robot – Control micro:bit",
   "short_name": "Genta Robot",
   "lang": "es",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#f4f6fb",
-  "theme_color": "#1f3c88",
+  "background_color": "#ffffff",
+  "theme_color": "#c55a11",
   "icons": [
     {
       "src": "img/icon-192.png",
@@ -16,6 +16,12 @@
       "src": "img/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "img/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
