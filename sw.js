@@ -5,9 +5,11 @@ const URLS_A_CACHEAR = [
   "./styles.css",
   "./app.js",
   "./manifest.json",
-  "./img/genta-logo.png",
+  "./img/genta-logo.svg",
   "./img/icon-192.png",
-  "./img/icon-512.png"
+  "./img/icon-512.png",
+  "./img/icon-maskable-512.png",
+  "./img/splash-1280x1920.png"
 ];
 
 self.addEventListener("install", (event) => {
